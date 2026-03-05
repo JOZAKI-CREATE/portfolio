@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 余計なVite初期CSSは全部削除 */
+
+body {
+  margin: 0;
+}
