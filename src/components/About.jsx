@@ -2,7 +2,7 @@ const About = () => {
   return (
     <section className="py-20 px-6 max-w-4xl mx-auto">
 
-      <h2 className="text-3xl font-bold text-center mb-10">
+      <h2 className="text-3xl font-bold text-center text-[#6b5e4f] mb-10">
         About
       </h2>
 
@@ -10,7 +10,7 @@ const About = () => {
         フロントエンドを中心にWeb制作を行っています。
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-stone-3600">
 
         <div className="bg-white p-6 rounded-xl shadow">
           React

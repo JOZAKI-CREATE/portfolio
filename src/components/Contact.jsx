@@ -18,14 +18,14 @@ const Contact = () => {
   return (
     <section className="py-20 px-6 max-w-3xl mx-auto">
 
-      <h2 className="text-3xl font-bold text-center mb-10">
+      <h2 className="text-3xl font-bold text-[#6b5e4f] text-center mb-10 " >
         Contact
       </h2>
 
       <form
         action="https://formspree.io/f/xvzwpbgd"
         method="POST"
-        className="bg-white p-8 rounded-2xl shadow-lg space-y-6"
+        className="bg-white p-8 rounded-2xl text-[#6b5e4f] shadow-lg space-y-6 "
       >
 
         <div>

@@ -4,7 +4,7 @@ const Services = () => {
   return (
     <section className="py-20 px-6 max-w-5xl mx-auto">
 
-      <h2 className="text-3xl font-bold text-center mb-12">
+      <h2 className="text-3xl font-bold text-center mb-12 text-[#6b5e4f]">
         Services
       </h2>
 
@@ -15,7 +15,7 @@ const Services = () => {
             key={service.title}
             className="bg-white rounded-2xl shadow-lg p-6"
           >
-            <h3 className="text-xl font-semibold mb-3">
+            <h3 className="text-xl font-semibold mb-3 text-[#6b5e4f]">
               {service.title}
             </h3>
 
