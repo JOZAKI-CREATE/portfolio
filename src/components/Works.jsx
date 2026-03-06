@@ -2,7 +2,7 @@ import TodoApp from "./works/TodoApp";
 
 const Works = () => {
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto">
+    <section className="py-24 px-6 max-w-6xl mx-auto" data-aos="fade-up">
 
       <h2 className="text-3xl font-bold text-center mb-12 text-[#6b5e4f]">
         Works
@@ -18,12 +18,13 @@ const Works = () => {
           </h3>
 
           <p className="text-sm text-stone-500 mb-4">
-            React / Tailwind
+            React / Tailwind / LocalStorage
           </p>
 
           <p className="text-stone-600 mb-6">
-            タスクを管理できるTodoアプリです。
-            追加・編集・削除・フィルター機能を実装しています。
+            タスク管理アプリを作成しました。
+            タスクの追加・編集・削除・フィルター機能を実装しています。
+            LocalStorageを利用してブラウザにデータ保存を行っています。
           </p>
 
           <div className="flex gap-4">
@@ -36,7 +37,7 @@ const Works = () => {
             </a>
 
             <a
-              href="#"
+              href="https://github.com/JOZAKI-CREATE/portfolio"
               className="px-4 py-2 border border-stone-300 rounded-lg text-sm text-[#6b5e4f]"
             >
               GitHub

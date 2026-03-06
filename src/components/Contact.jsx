@@ -16,7 +16,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-20 px-6 max-w-3xl mx-auto">
+    <section className="py-20 px-6 max-w-3xl mx-auto" data-aos="fade-up">
 
       <h2 className="text-3xl font-bold text-[#6b5e4f] text-center mb-10 " >
         Contact
