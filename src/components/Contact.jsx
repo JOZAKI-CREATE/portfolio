@@ -25,7 +25,7 @@ const Contact = () => {
       <form
         action="https://formspree.io/f/xvzwpbgd"
         method="POST"
-        className="bg-white p-8 rounded-2xl text-[#6b5e4f] shadow-lg space-y-6 "
+        className="bg-white p-8 rounded-2xl text-[#6b5e4f] shadow-lg space-y-6"
       >
 
         <div>

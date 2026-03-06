@@ -6,7 +6,7 @@ import Contact from "./components/Contact";
 
 const App = () => {
   return (
-    <div className="bg-stone-100 min-h-screen">
+    <div className="bg-stone-100 min-h-screen text-stone-800">
 
       <Hero />
 
