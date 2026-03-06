@@ -2,7 +2,7 @@ import TodoApp from "./works/TodoApp";
 
 const Works = () => {
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto" data-aos="fade-up">
+    <section className="py-24 px-6 max-w-6xl mx-auto" data-aos="zoom-in">
 
       <h2 className="text-3xl font-bold text-center mb-12 text-[#6b5e4f]">
         Works
@@ -12,6 +12,12 @@ const Works = () => {
 
         {/* 制作物カード */}
         <div className="bg-white/80 rounded-2xl shadow-lg p-6">
+
+          <img
+            src="/images/todo.png"
+            alt="Todo App"
+            className="rounded-lg mb-4"
+          />
 
           <h3 className="text-xl font-semibold mb-2 text-[#6b5e4f]">
             Todo App
@@ -31,14 +37,14 @@ const Works = () => {
 
             <a
               href="#todo-demo"
-              className="px-4 py-2 bg-[#a67c52] text-white rounded-lg text-sm"
+              className="px-4 py-2 bg-[#a67c52] text-white rounded-lg text-sm transition hover:opacity-90"
             >
               Demo
             </a>
 
             <a
               href="https://github.com/JOZAKI-CREATE/portfolio"
-              className="px-4 py-2 border border-stone-300 rounded-lg text-sm text-[#6b5e4f]"
+              className="px-4 py-2 border border-stone-300 rounded-lg text-sm text-[#6b5e4f] hover:bg-stone-50"
             >
               GitHub
             </a>
