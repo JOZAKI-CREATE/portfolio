@@ -10,7 +10,7 @@ const Hero = () => {
                 React / Web Development
             </p>
 
-            <p className="max-w-xl mx-auto text-stone-500">
+            <p className="px-6 max-w-xl mx-auto text-stone-500">
                 Reactを使ったWebアプリケーション制作をしています。
                 UI/UXを意識したシンプルで使いやすいデザインを心がけています。
             </p>

@@ -58,7 +58,7 @@ const ReservationApp = () => {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow duration-300" >
 
       <h2 className="text-2xl font-bold mb-6 text-[#6b5e4f]">
         Reservation
