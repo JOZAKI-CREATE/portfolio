@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -32,6 +33,8 @@ const App = () => {
       <Works />
 
       <Contact />
+
+      <Footer />
 
     </div>
   );

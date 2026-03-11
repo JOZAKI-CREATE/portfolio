@@ -5,7 +5,7 @@ import { works } from "../data/works";
 
 const Works = () => {
   return (
-    <section id="works" className="py-24 px-6 max-w-6xl mx-auto" data-aos="zoom-in">
+    <section id="works" className="py-20 px-6 max-w-6xl mx-auto scroll-mt-10" data-aos="zoom-in">
 
       <h2 className="text-3xl font-bold text-center mb-12 text-[#6b5e4f]">
         Works

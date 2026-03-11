@@ -2,7 +2,7 @@ import { services } from "../data/services";
 
 const Services = () => {
   return (
-    <section id="services" className="py-20 px-6 max-w-5xl mx-auto" data-aos="fade-up">
+    <section id="services" className="py-20 px-6 max-w-5xl mx-auto scroll-mt-24" data-aos="fade-up">
 
       <h2 className="text-3xl font-bold text-center mb-12 text-[#6b5e4f]">
         Services
