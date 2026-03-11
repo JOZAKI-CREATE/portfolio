@@ -6,6 +6,7 @@ import Contact from "./components/Contact";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Navbar from "./components/Navbar";
 
 
 const App = () => {
@@ -19,6 +20,8 @@ const App = () => {
 
   return (
     <div className="bg-stone-100 min-h-screen text-stone-800">
+
+      <Navbar />
 
       <Hero />
 

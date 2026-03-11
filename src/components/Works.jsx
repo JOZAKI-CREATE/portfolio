@@ -1,8 +1,11 @@
 import TodoApp from "./works/TodoApp";
+import Reservation from "./works/ReservationApp";
+import WorkCard from "./WorkCard";
+import { works } from "../data/works";
 
 const Works = () => {
   return (
-    <section className="py-24 px-6 max-w-6xl mx-auto" data-aos="zoom-in">
+    <section id="works" className="py-24 px-6 max-w-6xl mx-auto" data-aos="zoom-in">
 
       <h2 className="text-3xl font-bold text-center mb-12 text-[#6b5e4f]">
         Works
@@ -10,53 +13,20 @@ const Works = () => {
 
       <div className="grid md:grid-cols-2 gap-8">
 
-        {/* 制作物カード */}
-        <div className="bg-white/80 rounded-2xl shadow-lg p-6">
-
-          <img
-            src="/images/todo.png"
-            alt="Todo App"
-            className="rounded-lg mb-4"
-          />
-
-          <h3 className="text-xl font-semibold mb-2 text-[#6b5e4f]">
-            Todo App
-          </h3>
-
-          <p className="text-sm text-stone-500 mb-4">
-            React / Tailwind / LocalStorage
-          </p>
-
-          <p className="text-stone-600 mb-6">
-            タスク管理アプリを作成しました。
-            タスクの追加・編集・削除・フィルター機能を実装しています。
-            LocalStorageを利用してブラウザにデータ保存を行っています。
-          </p>
-
-          <div className="flex gap-4">
-
-            <a
-              href="#todo-demo"
-              className="px-4 py-2 bg-[#a67c52] text-white rounded-lg text-sm transition hover:opacity-90"
-            >
-              Demo
-            </a>
-
-            <a
-              href="https://github.com/JOZAKI-CREATE/portfolio"
-              className="px-4 py-2 border border-stone-300 rounded-lg text-sm text-[#6b5e4f] hover:bg-stone-50"
-            >
-              GitHub
-            </a>
-
-          </div>
-
-        </div>
+        {works.map((work) => (
+          <WorkCard key={work.title} work={work} />
+        ))}
 
       </div>
+
       <div id="todo-demo" className="mt-16">
         <TodoApp />
       </div>
+
+      <div id="reservation-demo" className="mt-16">
+        <Reservation />
+      </div>
+
     </section>
   );
 };

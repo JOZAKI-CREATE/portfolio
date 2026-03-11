@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="py-32 text-center">
+<section className="pt-40 pb-32 text-center">
 
       <h1 className="text-5xl text-[#6b5e4f] font-bold mb-6">
         Nanami Portfolio
