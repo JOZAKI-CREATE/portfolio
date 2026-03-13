@@ -62,21 +62,28 @@ const Navbar = () => {
             </div>
 
             {menuOpen && (
-                <nav className="md:hidden bg-white shadow-md px-6 py-4 flex flex-col gap-4 text-sm">
+                <nav className="md:hidden bg-white shadow-md flex flex-col text-sm text-[#6b5e4f]">
 
-                    <a href="#about" onClick={() => setMenuOpen(false)}>
+                    <a
+                        href="#about"
+                        onClick={() => setMenuOpen(false)}
+                        className="px-5 py-5 rounded hover:bg-stone-100 transition"
+                    >
                         About
                     </a>
 
-                    <a href="#services" onClick={() => setMenuOpen(false)}>
+                    <a href="#services" onClick={() => setMenuOpen(false)}
+                        className="px-5 py-5 rounded hover:bg-stone-100 transition">
                         Services
                     </a>
 
-                    <a href="#works" onClick={() => setMenuOpen(false)}>
+                    <a href="#works" onClick={() => setMenuOpen(false)}
+                        className="px-5 py-5 rounded hover:bg-stone-100 transition">
                         Works
                     </a>
 
-                    <a href="#contact" onClick={() => setMenuOpen(false)}>
+                    <a href="#contact" onClick={() => setMenuOpen(false)}
+                        className="px-5 py-5 rounded hover:bg-stone-100 transition">
                         Contact
                     </a>
 
