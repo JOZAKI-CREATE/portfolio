@@ -5,13 +5,17 @@ const CustomerApp = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [memo, setMemo] = useState("");
-  const [customers, setCustomers] = useState([]);
-
-  // LocalStorage読み込み
-  useEffect(() => {
+  const [search, setSearch] = useState("");
+  const [customers, setCustomers] = useState(() => {
     const saved = localStorage.getItem("customers");
-    if (saved) setCustomers(JSON.parse(saved));
-  }, []);
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [lastVisit, setLastVisit] = useState("");
+  const [editingId, setEditingId] = useState(null);
+  const [visitDate, setVisitDate] = useState("");
+  const [visitMenu, setVisitMenu] = useState("");
+  const [visitInputs, setVisitInputs] = useState({});
+
 
   // 保存
   useEffect(() => {
@@ -22,23 +26,92 @@ const CustomerApp = () => {
 
     if (!name) return alert("名前を入力してください");
 
-    const newCustomer = {
-      id: crypto.randomUUID(),
-      name,
-      phone,
-      memo
-    };
+    if (editingId) {
 
-    setCustomers([...customers, newCustomer]);
+      setCustomers(
+        customers.map((c) =>
+          c.id === editingId
+            ? { ...c, name, phone, memo, lastVisit }
+            : c
+        )
+      );
+
+      setEditingId(null);
+
+    } else {
+
+      const newCustomer = {
+        id: crypto.randomUUID(),
+        name,
+        phone,
+        memo,
+        lastVisit,
+        visits: []
+      };
+
+      setCustomers([...customers, newCustomer]);
+
+    }
 
     setName("");
     setPhone("");
     setMemo("");
+    setLastVisit("");
   };
 
   const deleteCustomer = (id) => {
     setCustomers(customers.filter(c => c.id !== id));
   };
+
+  const addVisit = (id) => {
+
+    const visit = visitInputs[id];
+    if (!visit?.date) return;
+
+    setCustomers(
+      customers.map((c) => {
+        if (c.id === id) {
+
+          const newVisit = {
+            date: visit.date,
+            menu: visit.menu
+          };
+
+          return {
+            ...c,
+            lastVisit: visitDate,
+            visits: [...(c.visits || []), newVisit]
+          };
+
+        }
+        return c;
+      })
+    );
+
+    setVisitInputs({
+      ...visitInputs,
+      [id]: { date: "", menu: "" }
+    });
+
+    setVisitDate("");
+    setVisitMenu("");
+  };
+
+  const startEdit = (customer) => {
+
+    setName(customer.name);
+    setPhone(customer.phone);
+    setMemo(customer.memo);
+    setLastVisit(customer.lastVisit || "");
+
+    setEditingId(customer.id);
+
+  };
+
+  // 🔍検索フィルター
+  const filteredCustomers = customers.filter((c) =>
+    c.name.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -67,6 +140,14 @@ const CustomerApp = () => {
           className="border rounded-lg p-2 w-full"
         />
 
+        <input
+          type="date"
+          value={lastVisit}
+          onChange={(e) => setLastVisit(e.target.value)}
+          className="border rounded-lg p-2 w-full"
+          placeholder="最終来店日"
+        />
+
         <textarea
           placeholder="メモ"
           value={memo}
@@ -78,16 +159,26 @@ const CustomerApp = () => {
           onClick={addCustomer}
           className="bg-[#a67c52] text-white px-4 py-2 rounded-lg"
         >
-          追加
+          {editingId ? "更新" : "追加"}
         </button>
 
       </div>
+
+      {/* 🔍検索 */}
+
+      <input
+        type="text"
+        placeholder="顧客検索"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="border rounded-lg p-2 w-full mb-6"
+      />
 
       {/* 顧客一覧 */}
 
       <div className="space-y-2">
 
-        {customers.map((c) => (
+        {filteredCustomers.map((c) => (
 
           <div
             key={c.id}
@@ -98,14 +189,74 @@ const CustomerApp = () => {
               <div>{c.name}</div>
               <div className="text-stone-400">{c.phone}</div>
               <div className="text-stone-500">{c.memo}</div>
+              <div className="text-xs text-stone-400">
+                最終来店: {c.lastVisit || "未登録"}
+              </div>
             </div>
 
-            <button
-              onClick={() => deleteCustomer(c.id)}
-              className="text-red-400 text-sm"
-            >
-              削除
-            </button>
+            <div className="mt-3 space-y-2">
+
+              <input
+                type="date"
+                value={visitInputs[c.id]?.date || ""}
+                onChange={(e) =>
+                  setVisitInputs({
+                    ...visitInputs,
+                    [c.id]: { ...visitInputs[c.id], date: e.target.value }
+                  })
+                }
+              />
+
+              <input
+                type="text"
+                placeholder="メニュー"
+                value={visitInputs[c.id]?.menu || ""}
+                onChange={(e) =>
+                  setVisitInputs({
+                    ...visitInputs,
+                    [c.id]: { ...visitInputs[c.id], menu: e.target.value }
+                  })
+                }
+              />
+
+              <button
+                onClick={() => addVisit(c.id)}
+                className="text-xs text-stone-400 hover:text-stone-600"
+              >
+                履歴追加
+              </button>
+
+            </div>
+
+            {c.visits && (
+              <div className="text-xs text-stone-400 mt-2">
+
+                {c.visits.map((v, i) => (
+                  <div key={i}>
+                    {v.date} {v.menu}
+                  </div>
+                ))}
+
+              </div>
+            )}
+
+            <div className="flex gap-3">
+
+              <button
+                onClick={() => startEdit(c)}
+                className="text-stone-400 hover:text-stone-600 text-sm"
+              >
+                編集
+              </button>
+
+              <button
+                onClick={() => deleteCustomer(c.id)}
+                className="text-stone-400 text-sm hover:text-stone-600"
+              >
+                削除
+              </button>
+
+            </div>
 
           </div>
 

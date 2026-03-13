@@ -1,10 +1,12 @@
 import TodoApp from "./works/TodoApp";
 import Reservation from "./works/ReservationApp";
+import CustomerApp from "./works/CustomerApp";
 import WorkCard from "./WorkCard";
 import { works } from "../data/works";
-import CustomerApp from "./works/CustomerApp";
+import { useState } from "react";
 
 const Works = () => {
+  const [activeDemo, setActiveDemo] = useState(null);
   return (
     <section id="works" className="py-20 px-6 max-w-6xl mx-auto scroll-mt-10" data-aos="zoom-in">
 
@@ -15,24 +17,41 @@ const Works = () => {
       <div className="grid md:grid-cols-3 gap-8">
 
         {works.map((work) => (
-          <WorkCard key={work.title} work={work} />
+          <WorkCard
+            key={work.title}
+            work={work}
+            onDemo={() => setActiveDemo(work.demo)}
+          />
         ))}
 
       </div>
 
-      <div id="todo-demo" className="mt-16">
-        <TodoApp />
-      </div>
+      {activeDemo && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
 
-      <div id="reservation-demo" className="mt-16">
-        <Reservation />
-      </div>
+          <div className="bg-white p-8 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto">
 
-      <div id="customer-demo" className="mt-16">
-        <CustomerApp />
-      </div>
+            <button
+              onClick={() => setActiveDemo(null)}
+              className="mb-4 text-sm text-stone-500"
+            >
+              閉じる
+            </button>
+
+            {activeDemo === "#todo-demo" && <TodoApp />}
+            {activeDemo === "#reservation-demo" && <Reservation />}
+            {activeDemo === "#customer-demo" && <CustomerApp />}
+
+          </div>
+
+        </div>
+      )}
+
 
     </section>
+
+
+
   );
 };
 

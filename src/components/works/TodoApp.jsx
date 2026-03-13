@@ -119,7 +119,7 @@ const TodoApp = () => {
 
   return (
     
-    <div className="min-h-screen bg-stone-150 flex justify-center items-center" data-aos="fade-up">
+    <div className="min-h-screen bg-stone-150 flex justify-center" >
       <div className="w-full max-w-2xl bg-white backdrop-blur rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 p-8">
         <Header />
 
