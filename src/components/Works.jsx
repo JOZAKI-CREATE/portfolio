@@ -2,6 +2,7 @@ import TodoApp from "./works/TodoApp";
 import Reservation from "./works/ReservationApp";
 import WorkCard from "./WorkCard";
 import { works } from "../data/works";
+import CustomerApp from "./works/CustomerApp";
 
 const Works = () => {
   return (
@@ -11,7 +12,7 @@ const Works = () => {
         Works
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-3 gap-8">
 
         {works.map((work) => (
           <WorkCard key={work.title} work={work} />
@@ -25,6 +26,10 @@ const Works = () => {
 
       <div id="reservation-demo" className="mt-16">
         <Reservation />
+      </div>
+
+      <div id="customer-demo" className="mt-16">
+        <CustomerApp />
       </div>
 
     </section>

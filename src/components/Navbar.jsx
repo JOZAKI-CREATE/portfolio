@@ -61,34 +61,38 @@ const Navbar = () => {
 
             </div>
 
-            {menuOpen && (
-                <nav className="md:hidden bg-white shadow-md flex flex-col text-sm text-[#6b5e4f]">
+<nav
+  className={`absolute top-full left-0 w-full md:hidden bg-white shadow-md flex flex-col text-sm text-[#6b5e4f]
+  transition-all duration-300
+  ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-5 opacity-0 pointer-events-none"}
+`}
+>
 
-                    <a
-                        href="#about"
-                        onClick={() => setMenuOpen(false)}
-                        className="px-5 py-5 rounded hover:bg-stone-100 transition"
-                    >
-                        About
-                    </a>
+                <a
+                    href="#about"
+                    onClick={() => setMenuOpen(false)}
+                    className="px-5 py-5 rounded hover:bg-stone-100 transition"
+                >
+                    About
+                </a>
 
-                    <a href="#services" onClick={() => setMenuOpen(false)}
-                        className="px-5 py-5 rounded hover:bg-stone-100 transition">
-                        Services
-                    </a>
+                <a href="#services" onClick={() => setMenuOpen(false)}
+                    className="px-5 py-5 rounded hover:bg-stone-100 transition">
+                    Services
+                </a>
 
-                    <a href="#works" onClick={() => setMenuOpen(false)}
-                        className="px-5 py-5 rounded hover:bg-stone-100 transition">
-                        Works
-                    </a>
+                <a href="#works" onClick={() => setMenuOpen(false)}
+                    className="px-5 py-5 rounded hover:bg-stone-100 transition">
+                    Works
+                </a>
 
-                    <a href="#contact" onClick={() => setMenuOpen(false)}
-                        className="px-5 py-5 rounded hover:bg-stone-100 transition">
-                        Contact
-                    </a>
+                <a href="#contact" onClick={() => setMenuOpen(false)}
+                    className="px-5 py-5 rounded hover:bg-stone-100 transition">
+                    Contact
+                </a>
 
-                </nav>
-            )}
+            </nav>
+
 
         </header>
     );

@@ -15,5 +15,6 @@ export const works = [
     description:
       "サロンの予約管理アプリ。日付ごとに予約を登録し時間の重複を防ぐ仕組みを実装。",
     demo: "#reservation-demo"
-  }
+  },
+  
 ];
