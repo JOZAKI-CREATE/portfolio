@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
                 <h1 className="font-bold text-[#6b5e4f]">
-                    Nanami
+                    JOZAKI CREATE
                 </h1>
 
                 <nav className="hidden md:flex gap-6 text-sm">

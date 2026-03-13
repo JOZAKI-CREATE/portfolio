@@ -3,8 +3,12 @@ const Hero = () => {
         <section className="pt-40 pb-32 text-center ">
 
             <h1 className="text-5xl text-[#6b5e4f] font-bold mb-6">
-                Nanami Portfolio
+                JOZAKI CREATE
             </h1>
+
+            <h2 className="text-4xl text-[#6b5e4f] font-bold mb-16">
+                Portfolio
+            </h2>
 
             <p className="text-stone-600 mb-8">
                 React / Web Development
