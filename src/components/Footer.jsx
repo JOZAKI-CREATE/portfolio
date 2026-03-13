@@ -3,7 +3,7 @@ const Footer = () => {
         <footer className="mt-20 py-10 text-center text-sm text-stone-500">
 
             <p className="mb-4">
-                © 2026 Nanami
+                © 2026 JOZAKI CREATE. All rights reserved.
             </p>
 
             <div className="flex justify-center gap-6">
