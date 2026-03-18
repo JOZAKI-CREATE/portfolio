@@ -15,13 +15,7 @@ const Footer = () => {
                 >
                     GitHub
                 </a>
-
-                <a
-                    href="#"
-                    className="hover:text-[#a67c52] transition"
-                >
-                    X
-                </a>
+   
 
             </div>
 
