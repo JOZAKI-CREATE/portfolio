@@ -8,7 +8,7 @@ import { useState } from "react";
 const Works = () => {
   const [activeDemo, setActiveDemo] = useState(null);
   return (
-    <section id="works" className="py-20 px-6 max-w-6xl mx-auto scroll-mt-10" data-aos="zoom-in">
+    <section id="works" className="py-20 px-6 max-w-6xl mx-auto scroll-mt-10">
 
       <h2 className="text-3xl font-bold text-center mb-12 text-[#6b5e4f]">
         Works
@@ -27,7 +27,7 @@ const Works = () => {
       </div>
 
       {activeDemo && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/50 flex items-start justify-center pt-10 z-50">
 
           <div className="bg-white p-8 rounded-xl max-w-4xl w-full max-h-[90vh] overflow-auto">
 
