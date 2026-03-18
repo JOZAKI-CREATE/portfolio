@@ -1,51 +1,46 @@
-# My Todo List App
+# Portfolio
 
-## 🌷 概要
-Reactを使用して作成したTodo管理アプリです。
+Reactを使ったWebアプリ開発をしています。
+シンプルで使いやすいUIと、実用的な機能設計を意識しています。
 
-タスクの追加・編集・削除・完了管理に加え、期限設定やフィルタリング機能を実装しています。
 
-コンポーネント設計を意識し、UIとロジックを分離して開発しました。
+## 🔗 Demo
 
----
-
-## ✨ 主な機能
-
-- タスク追加機能（アニメーション付き）  
-- タスク編集機能  
-- タスク削除（アニメーション付き）  
-- 完了タスク一括削除  
-- フィルタリング（全体／未完了／完了）  
-- 期限設定機能  
-- ローカルストレージ保存  
+https://portfolio-ten-flax-z9m90vcpqk.vercel.app/
 
 ---
 
-## 🎨 技術ポイント
+## 🛠 Works
 
-- React Hooks（useState, useEffect）
-- コンポーネント分割設計
-  - Header
-  - TaskInput
-  - TaskList
-  - TaskItem
-  - FilterTabs
-- TailwindCSSを使用したUI設計
-- アニメーション表現
+### ① Todo App
+タスク管理アプリ。追加・編集・削除・フィルター・期限機能を実装。
 
----
+### ② Reservation App
+サロン向け予約管理アプリ。日付ごとの予約登録・重複防止機能あり。
 
-## 💡 工夫した点
-
-- タスク追加・削除時のアニメーション実装  
-- 状態管理とUI表示の分離  
-- フィルタリング結果のソート処理  
-- localStorageを利用したデータ永続化  
+### ③ Customer Manager
+顧客管理アプリ。顧客情報のCRUD、検索、来店履歴、最終来店日を管理。
 
 ---
 
-## 🚀 今後の改善予定
+## ⚙️ Tech Stack
 
-- タスク検索機能の追加  
-- ドラッグ＆ドロップ並び替え  
-- ダークモード対応
+- React
+- JavaScript
+- Tailwind CSS
+- LocalStorage
+
+---
+
+## 💼 Skills
+
+- Reactを用いたフロントエンド開発
+- CRUD機能の実装
+- UI設計（シンプル・直感的な操作性）
+- LocalStorageを使ったデータ管理
+
+---
+
+## 📩 Contact
+
+簡単なWebアプリやLP制作など、お気軽にご相談ください。
